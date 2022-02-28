@@ -1,5 +1,5 @@
 function flask_package() {
-    echo 'flask package'
+    echo 'Initializing a new Flask package'
     wget "https://github.com/BlackIQ/apm-flask/archive/refs/tags/flask-apm-1.0.0.zip"
     unzip flask-apm-1.0.0.zip
     rm -rf flask-apm-1.0.0.zip
@@ -14,7 +14,18 @@ function flask_package() {
 }
 
 function php_package() {
-    echo 'php package'
+    echo 'Initializing a new Php package'
+    wget "https://github.com/BlackIQ/apm-php/archive/refs/tags/php-apm-1.0.0.zip"
+    unzip php-apm-1.0.0.zip
+    rm -rf php-apm-1.0.0.zip
+    cd apm-php-php-apm-1.0.0
+    rm -rf .git
+    git init
+    git add -A
+    git commit -m "Init of php apm package"
+    echo ''
+    echo 'Project created.'
+    echo 'cd apm-php-php-apm-1.0.0'
 }
 
 function static_package() {
