@@ -29,7 +29,18 @@ function php_package() {
 }
 
 function static_package() {
-    echo 'static package'
+    echo 'Initializing a new Static package'
+    wget "https://github.com/BlackIQ/static-apm/archive/refs/tags/static-apm-1.0.0.zip"
+    unzip static-apm-1.0.0.zip
+    rm -rf static-apm-1.0.0.zip
+    cd apm-static-static-apm-1.0.0
+    rm -rf .git
+    git init
+    git add -A
+    git commit -m "Init of static apm package"
+    echo ''
+    echo 'Project created.'
+    echo 'cd apm-static-static-apm-1.0.0'
 }
 
 if [ ! -z $1 ]
